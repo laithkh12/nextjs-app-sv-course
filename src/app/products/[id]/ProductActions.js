@@ -3,11 +3,12 @@
 import { useState } from "react";
 import styles from "./product-details.module.css";
 import { useCart } from "@/context/CartContext";
-import { toast } from "react-toastify";
+import { useNotification } from "@/context/NotificationContext";
 
 export default function ProductActions({ productId, price }) {
   const [quantity, setQuantity] = useState(1);
   const { addToCart } = useCart();
+  const { notify } = useNotification();
 
   const increase = () => setQuantity((prev) => prev + 1);
   const decrease = () => setQuantity((prev) => Math.max(prev - 1, 0));
@@ -17,7 +18,7 @@ export default function ProductActions({ productId, price }) {
     }
 
     addToCart(productId, quantity);
-    toast.success(`Added ${quantity} item(s) to cart`);
+    notify(`Added ${quantity} item(s) to cart`, "success");
   };
 
   return (

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import styles from "./NavBar.module.css";
 import { useCart } from "@/context/CartContext";
 
@@ -13,6 +14,7 @@ const navLinks = [
 
 export default function NavBar() {
   const { cartCount } = useCart();
+  const pathname = usePathname();
 
   return (
     <header className={styles.header}>
@@ -22,7 +24,11 @@ export default function NavBar() {
         </Link>
         <nav className={styles.nav} aria-label="Main navigation">
           {navLinks.map((link) => (
-            <Link key={link.href} href={link.href} className={styles.link}>
+            <Link
+              key={link.href}
+              href={link.href}
+              className={`${styles.link} ${pathname === link.href ? styles.activeLink : ""}`}
+            >
               {link.label}
             </Link>
           ))}

@@ -45,6 +45,7 @@
   border: 1px solid #e2e8f0;
   border-radius: 12px;
   padding: 0.8rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .imageWrap {
@@ -99,6 +100,7 @@
   font-size: 1rem;
   font-weight: 700;
   cursor: pointer;
+  transition: background-color 0.2s ease;
 }
 
 .qtyValue {
@@ -116,6 +118,7 @@
   width: 34px;
   height: 34px;
   cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
 .summary {
@@ -142,6 +145,7 @@
   padding: 0.6rem 0.9rem;
   font-size: 0.9rem;
   font-weight: 600;
+  transition: background-color 0.2s ease;
 }
 
 .dialogOverlay {
@@ -187,6 +191,7 @@
   padding: 0.55rem 0.8rem;
   font-weight: 600;
   cursor: pointer;
+  transition: background-color 0.2s ease;
 }
 
 .cancelButton {
@@ -197,6 +202,35 @@
 .confirmButton {
   background: #b91c1c;
   color: #ffffff;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .card:hover {
+    transform: translateY(-2px);
+    border-color: #cbd5e1;
+    box-shadow: 0 10px 18px rgba(15, 23, 42, 0.09);
+  }
+
+  .qtyButton:hover {
+    background: #e2e8f0;
+  }
+
+  .deleteButton:hover {
+    background: #fecaca;
+    transform: translateY(-1px);
+  }
+
+  .backButton:hover {
+    background: #1e293b;
+  }
+
+  .cancelButton:hover {
+    background: #cbd5e1;
+  }
+
+  .confirmButton:hover {
+    background: #991b1b;
+  }
 }
 
 @media (max-width: 720px) {

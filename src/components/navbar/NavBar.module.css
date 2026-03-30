@@ -40,6 +40,11 @@
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
+.activeLink {
+  background: #0f172a;
+  color: #ffffff;
+}
+
 .link:hover {
   background: #f1f5f9;
   color: #0f172a;
@@ -55,6 +60,7 @@
   padding: 0.42rem 0.72rem;
   font-size: 0.85rem;
   font-weight: 600;
+  transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
 .cartIcon {
@@ -77,6 +83,13 @@
   font-size: 0.75rem;
   font-weight: 700;
   padding: 0 0.25rem;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .cartLink:hover {
+    background: #1e293b;
+    transform: translateY(-1px);
+  }
 }
 
 @media (max-width: 640px) {

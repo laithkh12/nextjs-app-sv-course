@@ -1,13 +1,12 @@
 "use client";
 
-import { ToastContainer } from "react-toastify";
 import { CartProvider } from "@/context/CartContext";
+import { NotificationProvider } from "@/context/NotificationContext";
 
 export default function AppProviders({ children }) {
   return (
-    <CartProvider>
-      {children}
-      <ToastContainer position="top-right" autoClose={1800} />
-    </CartProvider>
+    <NotificationProvider>
+      <CartProvider>{children}</CartProvider>
+    </NotificationProvider>
   );
 }

@@ -4,11 +4,13 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useCart } from "@/context/CartContext";
-import { toast } from "react-toastify";
+import { useNotification } from "@/context/NotificationContext";
 import styles from "./page.module.css";
 
 export default function CartPage() {
-  const { cartItems, cartTotal, increaseItem, decreaseItem, removeItem } = useCart();
+  const { cartItems, cartTotal, increaseItem, decreaseItem, removeItem } =
+    useCart();
+  const { notify } = useNotification();
   const [itemToDelete, setItemToDelete] = useState(null);
 
   const requestDeleteItem = (item) => setItemToDelete(item);
@@ -19,12 +21,12 @@ export default function CartPage() {
     }
 
     removeItem(itemToDelete.id);
-    toast.success("Item removed from cart");
+    notify("Item removed from cart", "success");
     closeDeleteDialog();
   };
 
   const cancelDelete = () => {
-    toast.info("Item was not removed");
+    notify("Item was not removed", "info");
     closeDeleteDialog();
   };
 
@@ -115,14 +117,22 @@ export default function CartPage() {
           >
             <h2 id="remove-item-title">Remove item?</h2>
             <p>
-              Are you sure you want to remove <strong>{itemToDelete.title}</strong> from
-              your cart?
+              Are you sure you want to remove{" "}
+              <strong>{itemToDelete.title}</strong> from your cart?
             </p>
             <div className={styles.dialogActions}>
-              <button type="button" className={styles.cancelButton} onClick={cancelDelete}>
+              <button
+                type="button"
+                className={styles.cancelButton}
+                onClick={cancelDelete}
+              >
                 Cancel
               </button>
-              <button type="button" className={styles.confirmButton} onClick={confirmDelete}>
+              <button
+                type="button"
+                className={styles.confirmButton}
+                onClick={confirmDelete}
+              >
                 Remove
               </button>
             </div>
