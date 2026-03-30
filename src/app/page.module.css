@@ -1,0 +1,282 @@
+.page {
+  background: #f8fafc;
+  min-height: 100%;
+  width: 100%;
+  padding: 2rem 1.5rem 3rem;
+}
+
+.main {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+.hero h1 {
+  color: #0f172a;
+  font-size: 2.2rem;
+  margin-bottom: 0.6rem;
+}
+
+.hero p {
+  color: #475569;
+  max-width: 620px;
+  line-height: 1.6;
+}
+
+.cartCount {
+  display: inline-block;
+  margin-top: 0.7rem;
+  background: #0f172a;
+  color: #ffffff;
+  border-radius: 999px;
+  padding: 0.35rem 0.8rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.2rem;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 14px;
+  border: 1px solid #e2e8f0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  box-shadow: 0 5px 18px rgba(15, 23, 42, 0.07);
+}
+
+.cardLink {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  width: 100%;
+  border: none;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+}
+
+.imageWrap {
+  position: relative;
+  width: 100%;
+  min-height: 320px;
+  background: #f1f5f9;
+  padding: 1rem;
+}
+
+.image {
+  object-fit: contain;
+}
+
+.content {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.content h2 {
+  font-size: 1rem;
+  color: #0f172a;
+  margin-bottom: 0.55rem;
+}
+
+.content p {
+  color: #64748b;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.meta {
+  display: flex;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 0.9rem;
+  color: #334155;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  padding: 0 1rem 1rem;
+  margin-top: auto;
+}
+
+.primaryButton,
+.secondaryButton {
+  border: none;
+  border-radius: 8px;
+  padding: 0.62rem 0.85rem;
+  font-size: 0.88rem;
+  cursor: pointer;
+  text-align: center;
+  font-weight: 600;
+}
+
+.primaryButton {
+  background: #0f172a;
+  color: #ffffff;
+}
+
+.primaryButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.secondaryButton {
+  border: none;
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+.quantityControl {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.qtyButton {
+  border: none;
+  width: 32px;
+  height: 32px;
+  background: #f8fafc;
+  color: #0f172a;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.qtyValue {
+  min-width: 34px;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.totalPrice {
+  padding: 0 1rem 1rem;
+  color: #334155;
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  z-index: 50;
+}
+
+.modalCard {
+  position: relative;
+  width: min(950px, 100%);
+  max-height: 90vh;
+  overflow: auto;
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.closeButton {
+  position: absolute;
+  top: 0.65rem;
+  right: 0.7rem;
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 999px;
+  background: #e2e8f0;
+  color: #0f172a;
+  font-size: 1.25rem;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.modalImageWrap {
+  position: relative;
+  min-height: 400px;
+  background: #f1f5f9;
+  padding: 1.2rem;
+}
+
+.modalImage {
+  object-fit: contain;
+}
+
+.modalContent {
+  padding: 1.3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.modalContent h2 {
+  color: #0f172a;
+  font-size: 1.55rem;
+}
+
+.modalContent p {
+  color: #475569;
+  line-height: 1.7;
+}
+
+.modalMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  color: #334155;
+  font-weight: 600;
+}
+
+.modalActions {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 600px) {
+  .imageWrap {
+    min-height: 260px;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 860px) {
+  .modalCard {
+    grid-template-columns: 1fr;
+  }
+
+  .modalImageWrap {
+    min-height: 320px;
+  }
+}
