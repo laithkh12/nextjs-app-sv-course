@@ -52,6 +52,51 @@
   font-weight: 600;
 }
 
+.feedbackGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.feedbackCard {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+.feedbackHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 0.7rem;
+}
+
+.feedbackAvatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.feedbackName {
+  color: #0f172a;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.feedbackStars {
+  color: #f59e0b;
+  margin: 0.15rem 0 0;
+  letter-spacing: 0.05em;
+}
+
+.feedbackText {
+  color: #475569;
+  margin: 0;
+  line-height: 1.65;
+}
+
 @media (max-width: 640px) {
   .hero {
     padding: 1.5rem 1.1rem;
