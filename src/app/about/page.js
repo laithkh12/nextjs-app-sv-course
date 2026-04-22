@@ -32,7 +32,7 @@ export default function AboutPage() {
 
         <section className={styles.section}>
           <h2>Why Choose Us</h2>
-          <ul>
+          <ul className={styles.chooseList}>
             <li>Latest and trending tech products</li>
             <li>Quality you can trust</li>
             <li>Competitive prices</li>
