@@ -1,3 +1,4 @@
+import FeedbackCard from "@/components/feedback/FeedbackCard";
 import styles from "../info-pages.module.css";
 
 const feedbackCards = [
@@ -80,23 +81,13 @@ export default function FeedbackPage() {
           <h2>Customer Feedback</h2>
           <div className={styles.feedbackGrid}>
             {feedbackCards.map((card) => (
-              <article key={card.name} className={styles.feedbackCard}>
-                <div className={styles.feedbackHeader}>
-                  <img
-                    src={card.image}
-                    alt={`${card.name} avatar`}
-                    className={styles.feedbackAvatar}
-                  />
-                  <div>
-                    <h3 className={styles.feedbackName}>{card.name}</h3>
-                    <p className={styles.feedbackStars}>
-                      {"★".repeat(card.stars)}
-                      {"☆".repeat(5 - card.stars)}
-                    </p>
-                  </div>
-                </div>
-                <p className={styles.feedbackText}>{card.feedback}</p>
-              </article>
+              <FeedbackCard
+                key={card.name}
+                name={card.name}
+                image={card.image}
+                feedback={card.feedback}
+                stars={card.stars}
+              />
             ))}
           </div>
         </section>
